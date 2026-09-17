@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Faye (Fei) Xia — Chemical Engineering at Carnegie Mellon; ML and LLM systems for lab science.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+<title>Faye Xia</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#FBFAFF; --surface:#FFFFFF; --text:#26233A; --muted:#6B6784; --line:#E6E2F4;
+  --lav:#B69CF4; --lav-soft:#EDE6FD; --lav-deep:#7C5CD6;
+  --blue:#8EC5F5; --blue-soft:#E4F1FD; --blue-deep:#3B82C4;
+  --yellow:#FFD86B; --yellow-soft:#FFF4CC; --yellow-deep:#B8860B;
+  --shadow:0 1px 6px rgba(124,92,214,.10), 0 4px 18px rgba(142,197,245,.14);
+  --radius:22px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15131F; --surface:#1E1B2B; --text:#EDEAF8; --muted:#A39FBA; --line:#302C42;
+    --lav:#B69CF4; --lav-soft:#2B2442; --lav-deep:#C6B2FA;
+    --blue:#8EC5F5; --blue-soft:#1F2C3E; --blue-deep:#9CCCF7;
+    --yellow:#FFD86B; --yellow-soft:#3A3320; --yellow-deep:#FFE08A;
+    --shadow:0 1px 6px rgba(0,0,0,.4), 0 4px 18px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15131F; --surface:#1E1B2B; --text:#EDEAF8; --muted:#A39FBA; --line:#302C42;
+  --lav:#B69CF4; --lav-soft:#2B2442; --lav-deep:#C6B2FA;
+  --blue:#8EC5F5; --blue-soft:#1F2C3E; --blue-deep:#9CCCF7;
+  --yellow:#FFD86B; --yellow-soft:#3A3320; --yellow-deep:#FFE08A;
+  --shadow:0 1px 6px rgba(0,0,0,.4), 0 4px 18px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.55;padding-inline:16px;padding-block:0 64px;-webkit-font-smoothing:antialiased}
+a{color:var(--blue-deep);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--lav-deep);outline-offset:2px;border-radius:6px}
+
+/* top bar */
+.top{max-width:1100px;margin:0 auto;display:flex;justify-content:flex-end;gap:18px;padding-block:14px;font-size:13px}
+.top a{color:var(--muted)}
+.top a:hover{color:var(--text)}
+
+/* hero */
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding-block:56px 28px;gap:22px}
+.wordmark{font-family:"Fraunces","Iowan Old Style",Georgia,serif;font-size:clamp(46px,9vw,84px);font-weight:600;letter-spacing:-.02em;line-height:1;margin:0;text-wrap:balance}
+.wordmark span{display:inline-block;transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.wordmark:hover span{transform:translateY(-6px)}
+.wordmark span:nth-child(2){transition-delay:.04s}.wordmark span:nth-child(3){transition-delay:.08s}.wordmark span:nth-child(4){transition-delay:.12s}.wordmark span:nth-child(6){transition-delay:.16s}.wordmark span:nth-child(7){transition-delay:.20s}.wordmark span:nth-child(8){transition-delay:.24s}
+.c1{color:var(--lav-deep)}.c2{color:var(--blue-deep)}.c3{color:var(--yellow-deep)}
+.tag{color:var(--muted);font-size:15px;margin:-8px 0 0;max-width:34em;text-wrap:balance}
+.searchwrap{width:100%;max-width:620px}
+.search{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:12px 18px 12px 20px;box-shadow:var(--shadow);transition:box-shadow .2s,border-color .2s}
+.search:focus-within{border-color:var(--lav);box-shadow:0 2px 10px rgba(124,92,214,.18),0 8px 28px rgba(142,197,245,.22)}
+.search svg{flex:none;color:var(--muted)}
+.search input{flex:1;border:0;background:transparent;font:inherit;font-size:16px;color:var(--text);outline:none;min-width:0}
+.search input::placeholder{color:var(--muted)}
+.clear{border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:18px;line-height:1;padding:2px 4px;border-radius:50%}
+.clear:hover{color:var(--text)}
+.buttons{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.btn{font:inherit;font-size:14px;font-weight:500;border:1px solid var(--line);background:var(--surface);color:var(--text);padding:9px 18px;border-radius:10px;cursor:pointer;transition:background .15s,border-color .15s,transform .15s}
+.btn:hover{border-color:var(--lav);background:var(--lav-soft);transform:translateY(-1px)}
+.btn.lucky:hover{background:var(--yellow-soft);border-color:var(--yellow)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:2px}
+.chip{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:6px 13px;border-radius:999px;cursor:pointer;transition:all .15s}
+.chip:hover,.chip.on{background:var(--blue-soft);border-color:var(--blue);color:var(--blue-deep)}
+
+/* results */
+.results{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:38px}
+.meta{color:var(--muted);font-size:13px;min-height:20px;padding-inline:4px}
+.meta em{font-style:normal;color:var(--text);font-weight:600}
+section h2{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;padding-inline:4px;display:flex;align-items:center;gap:10px}
+section h2::after{content:"";flex:1;height:1px;background:var(--line)}
+.list{display:flex;flex-direction:column;gap:10px}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;transition:border-color .15s,box-shadow .15s}
+.item:hover{border-color:var(--lav);box-shadow:var(--shadow)}
+.item.hide,section.hide,.chipsrow.hide{display:none}
+.crumb{font-size:12px;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:6px}
+.crumb .dot{width:4px;height:4px;border-radius:50%;background:var(--line)}
+.crumb .when{margin-left:auto;font-variant-numeric:tabular-nums}
+.item h3{margin:0;font-size:19px;font-weight:600;line-height:1.3;color:var(--blue-deep)}
+.item h3 .role{color:var(--text);font-weight:500;font-size:15px;display:block}
+.item p{margin:8px 0 0;color:var(--muted)}
+.item ul{margin:10px 0 0;padding-left:18px;color:var(--text)}
+.item li{margin:4px 0}
+.item li::marker{color:var(--lav)}
+details summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;color:var(--lav-deep);font-size:13px;font-weight:600;margin-top:12px;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"▸";font-size:12px;transition:transform .2s}
+details[open] summary::before{transform:rotate(90deg)}
+details summary:hover{text-decoration:underline}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.t{font-size:12px;padding:3px 10px;border-radius:999px;background:var(--lav-soft);color:var(--lav-deep);font-weight:500}
+.t.b{background:var(--blue-soft);color:var(--blue-deep)}
+.t.y{background:var(--yellow-soft);color:var(--yellow-deep)}
+mark{background:var(--yellow-soft);color:inherit;border-radius:3px;padding:0 1px}
+
+/* skills */
+.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.skill h4{margin:0 0 8px;font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.skill .tags{margin-top:0}
+.skill:nth-child(1) .t{background:var(--lav-soft);color:var(--lav-deep)}
+.skill:nth-child(2) .t{background:var(--blue-soft);color:var(--blue-deep)}
+.skill:nth-child(3) .t{background:var(--yellow-soft);color:var(--yellow-deep)}
+.skill:nth-child(4) .t{background:var(--lav-soft);color:var(--lav-deep)}
+
+/* honors */
+.honors{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.honor{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
+.honor .ic{width:34px;height:34px;flex:none;border-radius:10px;display:grid;place-items:center;font-size:16px}
+.honor b{display:block;font-size:14px}
+.honor span{color:var(--muted);font-size:13px}
+
+/* contact / footer */
+.contact{display:flex;gap:10px;flex-wrap:wrap}
+.contact a{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:9px 16px;color:var(--text);font-weight:500;font-size:14px}
+.contact a:hover{border-color:var(--blue);background:var(--blue-soft);text-decoration:none;color:var(--blue-deep)}
+.contact svg{width:16px;height:16px}
+.empty{text-align:center;color:var(--muted);padding:40px 16px;display:none}
+.empty.show{display:block}
+.empty b{color:var(--text)}
+footer{max-width:760px;margin:56px auto 0;text-align:center;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:18px}
+.toplink{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:40px;height:40px;border-radius:50%;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;place-items:center;color:var(--muted);opacity:0;pointer-events:none;transition:opacity .2s}
+.toplink.show{opacity:1;pointer-events:auto}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+@media (max-width:480px){.item{padding:16px 16px}.crumb .when{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+<nav class="top">
+  <a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+</nav>
+
+<header class="hero">
+  <h1 class="wordmark" aria-label="Faye (Fei) Xia"><span class="c1">F</span><span class="c2">a</span><span class="c3">y</span><span class="c1">e</span><span>&nbsp;</span><span class="c2">X</span><span class="c1">i</span><span class="c3">a</span></h1>
+  <p class="tag">Fei Xia · Chemical Engineering at Carnegie Mellon, minoring in Biomedical Engineering and Machine Learning. I build ML and LLM systems for lab science, and occasionally 3D-print a venturi.</p>
+  <div class="searchwrap">
+    <label class="search" for="q">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search my experience, projects, skills…" autocomplete="off" aria-label="Search this page">
+      <button class="clear" id="clear" type="button" aria-label="Clear search" hidden>×</button>
+    </label>
+  </div>
+  <div class="buttons">
+    <button class="btn" id="searchBtn" type="button">Search</button>
+    <button class="btn lucky" id="lucky" type="button">I'm Feeling Lucky</button>
+  </div>
+  <div class="chips" aria-label="Quick filters">
+    <button class="chip" data-q="LLM">LLM agents</button>
+    <button class="chip" data-q="regression">regression</button>
+    <button class="chip" data-q="yeast">yeast</button>
+    <button class="chip" data-q="SolidWorks">SolidWorks</button>
+    <button class="chip" data-q="Python">Python</button>
+    <button class="chip" data-q="patent">patent</button>
+  </div>
+</header>
+
+<main class="results" id="results">
+  <div class="meta" id="meta"></div>
+
+  <section id="experience" data-section>
+    <h2>Experience</h2>
+    <div class="list">
+
+      <article class="item" data-kind="experience">
+        <div class="crumb">Procter &amp; Gamble <span class="dot"></span> Cincinnati, OH <span class="when">May – Aug 2026</span></div>
+        <h3>Digital Innovation Intern <span class="role">Oral Care R&amp;D</span></h3>
+        <p>Built conversational access to R&amp;D knowledge: a supervisory LLM agent that classifies a research question and routes it to text-to-SQL for structured analysis or RAG for semantic discovery.</p>
+        <details><summary>More detail</summary>
+          <ul>
+            <li>Coordinated parallel retrieval, evidence-grounded response synthesis, and safety screening, combining SQL analysis with semantic retrieval across research documents.</li>
+            <li>Extracted embedded attachments from irregular document formats; combined structural context, parsing rules, and reference data to disambiguate identifiers and link extracted evidence with SQL in Databricks.</li>
+          </ul>
+        </details>
+        <div class="tags"><span class="t">LLM orchestration</span><span class="t">RAG</span><span class="t">text-to-SQL</span><span class="t b">Databricks</span><span class="t b">SQL</span></div>
+      </article>
+
+      <article class="item" data-kind="experience">
+        <div class="crumb">Mafold (startup) <span class="dot"></span> Pittsburgh, PA <span class="when">Jul 2026 – present</span></div>
+        <h3>Co-founder <span class="role">AI agent product development</span></h3>
+        <p>Co-founded a platform that lets anyone run AI coding agents as chat bots on their own hardware, with a cross-provider token economy that makes model capacity transferable between users.</p>
+        <details><summary>More detail</summary>
+          <ul>
+            <li>Identified and specified 12 product gaps spanning privacy boundaries, multi-agent orchestration, onboarding, and per-task model routing; designed a 3-category issue taxonomy and 5-level priority scale for triage.</li>
+            <li>Evaluated four data-acquisition paths (first-party API, open-source scrapers, hosted scraping, LLM-native search) on cost, compliance, and maintenance, surfacing a compliant option roughly 85% below the official API cost.</li>
+          </ul>
+        </details>
+        <div class="tags"><span class="t">product</span><span class="t">multi-agent</span><span class="t y">startup</span></div>
+      </article>
+
+      <article class="item" data-kind="experience">
+        <div class="crumb">Carnegie Mellon University <span class="dot"></span> Kitchin Lab <span class="when">Dec 2025 – present</span></div>
+        <h3>Researcher <span class="role">Self-driving lab &amp; ML for materials</span></h3>
+        <p>Automated 96 RYB dye mixtures on an Opentrons Flex as a proxy for yeast media formulation, then trained forward and inverse regression models on the absorbance data.</p>
+        <details><summary>More detail</summary>
+          <ul>
+            <li>Measured absorbance at 450, 562, 600, and 650 nm to characterize composition–property relationships.</li>
+            <li>Trained on 76 wells, evaluated forward predictions on 20 held-out wells across 4 wavelengths: R² = 0.9912–0.9989, MAE = 0.0106–0.0296 OD.</li>
+            <li>Applied a proposed neural network to predict log viscosity from 39,077 measurements across 1,734 compounds, using learned molecular embeddings to compare linear, pairwise, and attention mixers under a compound-based split.</li>
+          </ul>
+        </details>
+        <div class="tags"><span class="t">regression</span><span class="t">neural networks</span><span class="t b">Opentrons Flex</span><span class="t b">Python</span></div>
+      </article>
+
+      <article class="item" data-kind="experience">
+        <div class="crumb">Carnegie Mellon University <span class="dot"></span> Robinson Lab <span class="when">Sep 2024 – May 2026</span></div>
+        <h3>Research Assistant <span class="role">Protein purification &amp; yeast transformation</span></h3>
+        <p>Designed and led troubleshooting of a yeast and mammalian protein purification protocol across 7 controlled factors, raising protein yield by 200%.</p>
+        <details><summary>More detail</summary>
+          <ul>
+            <li>Validated results with gel electrophoresis and Western blot.</li>
+            <li>Ran collaborative yeast transformation experiments targeting GPCRs using nanodisc technology; funded by a CMU ChESS Research Fellowship and presented at the Berg Scholars Symposium.</li>
+          </ul>
+        </details>
+        <div class="tags"><span class="t y">wet lab</span><span class="t">Western blot</span><span class="t">yeast</span><span class="t">GPCRs</span></div>
+      </article>
+
+      <article class="item" data-kind="experience">
+        <div class="crumb">Guangzhou Doublle Bioproducts Co. Ltd <span class="dot"></span> Guangzhou, CN <span class="when">Jun – Sep 2023</span></div>
+        <h3>Research Intern <span class="role">Biomaterials for wound healing</span></h3>
+        <p>Engineered hydrogels incorporating stem cell-derived exosomes to improve wound-healing efficiency; characterized structure and protein content with TEM and Western blotting.</p>
+        <details><summary>More detail</summary>
+          <ul>
+            <li>Conducted in vivo wound-healing studies in mice and analyzed longitudinal biological data.</li>
+            <li>Co-inventor on the 2024 patent “Stem cell exosome-based hair restorer and its application.”</li>
+          </ul>
+        </details>
+        <div class="tags"><span class="t y">patent</span><span class="t">hydrogels</span><span class="t">TEM</span><span class="t">in vivo</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="projects" data-section>
+    <h2>Projects</h2>
+    <div class="list">
+
+      <article class="item" data-kind="project">
+        <div class="crumb">Carnegie Mellon <span class="dot"></span> Data Visualization (06-643), graduate course <span class="when">Jan – Feb 2026</span></div>
+        <h3>Early Yeast Culture Outcome Prediction</h3>
+        <p>Can the first four hours of a yeast growth curve predict final GFP productivity? Engineered kinetic features from 75 samples across three carbon sources (YPD, YPG, YPDG) and compared symbolic regression, Random Forest, and XGBoost.</p>
+        <details><summary>More detail</summary>
+          <ul>
+            <li>Features: initial biomass, maximum growth rate (μ<sub>max</sub>), lag time, early biomass accumulation (AUC<sub>4h</sub>), and curvature; raw OD smoothed with a Savitzky–Golay filter after blank validation and abnormal-well removal.</li>
+            <li>Symbolic regression on log-transformed productivity reached R² = 0.9876 and MSE = 0.1023 on 23 held-out samples; t-SNE showed media type structures early growth phenotypes.</li>
+          </ul>
+        </details>
+        <div class="tags"><span class="t">symbolic regression</span><span class="t">XGBoost</span><span class="t">feature engineering</span><span class="t b">Python</span><span class="t y">yeast</span></div>
+      </article>
+
+      <article class="item" data-kind="project">
+        <div class="crumb">Carnegie Mellon <span class="dot"></span> Creating Scientific Software (06-643) <span class="when">Spring 2026</span></div>
+        <h3>Mana · AI study scheduler for Canvas</h3>
+        <p>A Python CLI that pulls Canvas assignments and Google Calendar events, uses Gemini to classify deadlines and build a daily study plan around your habits, and sends email and SMS reminders through the Gmail API. Iterated through five versions.</p>
+        <details><summary>More detail</summary>
+          <ul>
+            <li>Natural-language schedule edits (<code>mana schedule "add gym at 3pm"</code>), submission-status indicators from the Canvas Submissions API, fuzzy deduplication of calendar and Canvas items, and a daily cron job.</li>
+            <li>Interactive <code>setup</code> command with live credential validation; 100+ pytest tests and GitHub Actions CI.</li>
+          </ul>
+        </details>
+        <div class="tags"><span class="t">Gemini API</span><span class="t">Google OAuth</span><span class="t b">Python</span><span class="t b">pytest</span><span class="t b">CI</span></div>
+      </article>
+
+      <article class="item" data-kind="project">
+        <div class="crumb">Carnegie Mellon <span class="dot"></span> Fluid Mechanics term project <span class="when">Spring 2026</span></div>
+        <h3>Inclined Venturi Meter for Fertilizer Irrigation</h3>
+        <p>Designed and 3D-printed a venturi meter that operates at a 45° incline, modeling how irrigation systems draw fertilizer into flow against gravity. I built all of the 3D models in SolidWorks.</p>
+        <details><summary>More detail</summary>
+          <ul>
+            <li>Geometry: 160 mm length, 18 mm inlet/outlet, 6 mm throat, 135° elbow, and angled manometer bases so the tubes stay vertical on the incline; printed in Tough Resin 1500 for under $25.</li>
+            <li>Compared Bernoulli/continuity theory, COMSOL simulation (~0.6 m/s centerline throat velocity), and bench measurements (1649 Pa inlet → 472 Pa throat); the ~785 Pa hydrostatic term proved small relative to velocity-driven pressure change.</li>
+          </ul>
+        </details>
+        <div class="tags"><span class="t y">SolidWorks</span><span class="t y">COMSOL</span><span class="t">3D printing</span><span class="t">fluid dynamics</span></div>
+      </article>
+
+      <article class="item" data-kind="project">
+        <div class="crumb">Carnegie Mellon <span class="dot"></span> 15-112 term project, group leader <span class="when">May 2025</span></div>
+        <h3>Monument Valley Game Replica</h3>
+        <p>Led a 4-person team recreating Monument Valley in Python with isometric projection and matrix transformations; improved rendering frame rate by 150% and landed in the Top 20 Projects Gallery.</p>
+        <details><summary>More detail</summary>
+          <ul>
+            <li>Coordinated Git workflows across 12 feature branches and 75 pull requests, maintained 100% test coverage, and integrated user-interaction and game-logic modules into the final playable demo.</li>
+          </ul>
+        </details>
+        <div class="tags"><span class="t b">Python</span><span class="t b">Git</span><span class="t">graphics</span><span class="t y">team lead</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills" data-section>
+    <h2>Skills</h2>
+    <div class="skillgrid">
+      <div class="skill item" data-kind="skill"><h4>Programming &amp; data</h4><div class="tags"><span class="t">Python</span><span class="t">NumPy</span><span class="t">pandas</span><span class="t">scikit-learn</span><span class="t">seaborn</span><span class="t">SQL</span><span class="t">C/C++</span><span class="t">MATLAB</span><span class="t">Git</span><span class="t">Databricks</span></div></div>
+      <div class="skill item" data-kind="skill"><h4>Machine learning</h4><div class="tags"><span class="t">LLM orchestration</span><span class="t">RAG</span><span class="t">text-to-SQL</span><span class="t">regression</span><span class="t">symbolic regression</span><span class="t">XGBoost</span><span class="t">feature engineering</span><span class="t">cross-validation</span></div></div>
+      <div class="skill item" data-kind="skill"><h4>Design &amp; simulation</h4><div class="tags"><span class="t">SolidWorks</span><span class="t">COMSOL Multiphysics</span><span class="t">3D printing</span><span class="t">Opentrons Flex</span></div></div>
+      <div class="skill item" data-kind="skill"><h4>Wet lab</h4><div class="tags"><span class="t">protein purification</span><span class="t">Western blot</span><span class="t">gel electrophoresis</span><span class="t">yeast transformation</span><span class="t">TEM</span><span class="t">in vivo studies</span></div></div>
+    </div>
+  </section>
+
+  <section id="honors" data-section>
+    <h2>Honors</h2>
+    <div class="honors">
+      <div class="honor item" data-kind="honor"><div class="ic" style="background:var(--yellow-soft)">★</div><div><b>Dean's List</b><span>Fall 2024 and Spring 2026</span></div></div>
+      <div class="honor item" data-kind="honor"><div class="ic" style="background:var(--lav-soft)">◆</div><div><b>CMU ChESS Research Fellowship</b><span>$4,500 (2025); presented at the Berg Scholars Symposium</span></div></div>
+      <div class="honor item" data-kind="honor"><div class="ic" style="background:var(--blue-soft)">✦</div><div><b>Patent co-inventor</b><span>“Stem cell exosome-based hair restorer and its application” (2024)</span></div></div>
+      <div class="honor item" data-kind="honor"><div class="ic" style="background:var(--yellow-soft)">▲</div><div><b>Top 20 Projects Gallery</b><span>15-112, Monument Valley replica (2025)</span></div></div>
+    </div>
+  </section>
+
+  <section id="education" data-section>
+    <h2>Education</h2>
+    <article class="item" data-kind="education">
+      <div class="crumb">Pittsburgh, PA <span class="when">Expected May 2028</span></div>
+      <h3>Carnegie Mellon University <span class="role">B.S. Chemical Engineering · Minors in Biomedical Engineering and Machine Learning</span></h3>
+      <p>Relevant coursework: Artificial Intelligence and Machine Learning I; Computational Optimization and Machine Learning for Chemical Engineering; Probability Theory for Computer Scientists; Principles of Imperative Computation.</p>
+    </article>
+  </section>
+
+  <section id="contact" data-section>
+    <h2>Contact</h2>
+    <div class="contact item" data-kind="contact" style="border:0;background:transparent;padding:0;box-shadow:none">
+      <a href="mailto:feix2@andrew.cmu.edu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>feix2@andrew.cmu.edu</a>
+      <a href="https://www.linkedin.com/in/fayexia05" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14H.2V8zm7.4 0h4.4v1.9h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.5 3 5.5 6.9V22h-4.6v-6.6c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5V22H7.6V8z"/></svg>LinkedIn</a>
+      <a href="https://github.com/feixia2754" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>GitHub</a>
+    </div>
+  </section>
+
+  <div class="empty" id="empty">Your search — <b id="emptyq"></b> — did not match anything on this page.<br>Try “LLM”, “yeast”, “SolidWorks”, or clear the search.</div>
+</main>
+
+<footer>Faye (Fei) Xia · Carnegie Mellon University · updated September 2026</footer>
+<a href="#" class="toplink" id="toplink" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"/></svg></a>
+
+<script>
+(function(){
+  const q=document.getElementById('q'), clear=document.getElementById('clear'), meta=document.getElementById('meta'),
+        empty=document.getElementById('empty'), emptyq=document.getElementById('emptyq'),
+        items=[...document.querySelectorAll('.item')], sections=[...document.querySelectorAll('section[data-section]')],
+        chips=[...document.querySelectorAll('.chip')], toplink=document.getElementById('toplink');
+  items.forEach(el=>{el.dataset.text=el.textContent.toLowerCase(); el.dataset.html=el.innerHTML;});
+
+  function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+  function highlight(el,term){
+    el.innerHTML=el.dataset.html;
+    if(!term) return;
+    const re=new RegExp('('+esc(term)+')','gi');
+    const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null);
+    const nodes=[]; let n; while((n=walker.nextNode())) if(re.test(n.nodeValue)) nodes.push(n);
+    nodes.forEach(node=>{
+      const span=document.createElement('span');
+      span.innerHTML=node.nodeValue.replace(re,'<mark>$1</mark>');
+      node.parentNode.replaceChild(span,node);
+    });
+    el.querySelectorAll('details').forEach(d=>{ if(d.querySelector('mark')) d.open=true; });
+  }
+
+  let t;
+  function run(){
+    const term=q.value.trim(), low=term.toLowerCase();
+    clear.hidden=!term;
+    chips.forEach(c=>c.classList.toggle('on',c.dataset.q.toLowerCase()===low));
+    let shown=0;
+    items.forEach(el=>{
+      const hit=!low||el.dataset.text.includes(low);
+      el.classList.toggle('hide',!hit);
+      highlight(el, hit?term:'');
+      if(hit) shown++;
+    });
+    sections.forEach(s=>s.classList.toggle('hide',!s.querySelector('.item:not(.hide)')));
+    empty.classList.toggle('show',shown===0); emptyq.textContent=term;
+    meta.innerHTML= term ? `About <em>${shown}</em> result${shown===1?'':'s'} for <em>“${term.replace(/</g,'&lt;')}”</em>` : `About <em>${items.length}</em> results (0.00 seconds)`;
+  }
+  q.addEventListener('input',()=>{clearTimeout(t); t=setTimeout(run,90);});
+  q.addEventListener('keydown',e=>{ if(e.key==='Enter'){ run(); document.getElementById('results').scrollIntoView({behavior:'smooth'}); } if(e.key==='Escape'){ q.value=''; run(); } });
+  clear.addEventListener('click',()=>{q.value=''; run(); q.focus();});
+  document.getElementById('searchBtn').addEventListener('click',()=>{run(); document.getElementById('results').scrollIntoView({behavior:'smooth'});});
+  chips.forEach(c=>c.addEventListener('click',()=>{ q.value=c.classList.contains('on')?'':c.dataset.q; run(); }));
+  document.getElementById('lucky').addEventListener('click',()=>{
+    q.value=''; run();
+    const pool=items.filter(el=>el.dataset.kind==='project'||el.dataset.kind==='experience');
+    const pick=pool[Math.floor(Math.random()*pool.length)];
+    pick.scrollIntoView({behavior:'smooth',block:'center'});
+    const d=pick.querySelector('details'); if(d) d.open=true;
+    pick.style.borderColor='var(--yellow)'; pick.style.boxShadow='0 0 0 4px var(--yellow-soft)';
+    setTimeout(()=>{pick.style.borderColor=''; pick.style.boxShadow='';},1800);
+  });
+  window.addEventListener('scroll',()=>toplink.classList.toggle('show',window.scrollY>500),{passive:true});
+  toplink.addEventListener('click',e=>{e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); q.focus();});
+  run();
+})();
+</script>
+</body>
+</html>
