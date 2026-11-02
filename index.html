@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Faye (Fei) Xia — CMU Chemical Engineering, AI product development, technical program management, and scientific machine learning.">
+<meta name="description" content="Faye (Fei) Xia — Chemical Engineering at Carnegie Mellon; ML and LLM systems for lab science.">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
 <title>Faye Xia</title>
@@ -133,12 +133,12 @@ footer{max-width:760px;margin:56px auto 0;text-align:center;color:var(--muted);f
 </head>
 <body>
 <nav class="top">
-  <a href="assets/Fei_Xia_TPM_Resume.pdf">Resume ↗</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  <a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
 </nav>
 
 <header class="hero">
   <h1 class="wordmark" aria-label="Faye (Fei) Xia"><span class="c1">F</span><span class="c2">a</span><span class="c3">y</span><span class="c1">e</span><span>&nbsp;</span><span class="c2">X</span><span class="c1">i</span><span class="c3">a</span></h1>
-  <p class="tag">I’m Fei, a CMU Chemical Engineering student and AI startup co-founder. I’m drawn to unmet user needs and the data that reveals them, and enjoy turning open-ended questions into practical technical solutions that make everyday experiences better.</p>
+  <p class="tag">Fei Xia · Chemical Engineering at Carnegie Mellon, minoring in Biomedical Engineering and Machine Learning. I build ML and LLM systems for lab science, and occasionally 3D-print a venturi.</p>
   <div class="searchwrap">
     <label class="search" for="q">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
@@ -153,7 +153,7 @@ footer{max-width:760px;margin:56px auto 0;text-align:center;color:var(--muted);f
   <div class="chips" aria-label="Quick filters">
     <button class="chip" data-q="LLM">LLM agents</button>
     <button class="chip" data-q="regression">regression</button>
-    <button class="chip" data-q="product">product</button>
+    <button class="chip" data-q="yeast">yeast</button>
     <button class="chip" data-q="SolidWorks">SolidWorks</button>
     <button class="chip" data-q="Python">Python</button>
     <button class="chip" data-q="patent">patent</button>
@@ -167,11 +167,45 @@ footer{max-width:760px;margin:56px auto 0;text-align:center;color:var(--muted);f
     <h2>Experience</h2>
     <div class="list">
 
-      <article class="item" id="pg" data-kind="experience"><div class="crumb">Procter &amp; Gamble · Cincinnati, OH · May–August 2026</div><h3>Digital Innovation Intern<span class="role">Oral Care R&amp;D</span></h3><p>Connected stakeholder needs with engineering implementation for an R&amp;D knowledge chatbot and automated data pipeline spanning 5,000+ research documents.</p><details><summary>More detail</summary><ul><li>Gathered user requirements, clarified expectations with my manager and coach, and translated requests into technical questions for engineering discussions.</li><li>Coordinated with a Europe-based engineer and scheduled user testing so feedback could inform subsequent technical iterations.</li><li>Evaluated an existing RAG pipeline for domain-specific retrieval, informing the choice of Databricks-native retrieval and text-to-SQL tools.</li><li>Parsed irregular document formats and embedded attachments into Databricks to support searchable research information.</li></ul></details><p class="project-links"></p><div class="tags"><span class="t">stakeholder coordination</span><span class="t">user testing</span><span class="t">RAG</span><span class="t">Databricks</span><span class="t">SQL</span></div></article>
+      <article class="item" data-kind="experience">
+        <div class="crumb">Procter &amp; Gamble <span class="dot"></span> Cincinnati, OH <span class="when">May – Aug 2026</span></div>
+        <h3>Digital Innovation Intern <span class="role">Oral Care R&amp;D</span></h3>
+        <p>Built conversational access to R&amp;D knowledge: a supervisory LLM agent that classifies a research question and routes it to text-to-SQL for structured analysis or RAG for semantic discovery.</p>
+        <details><summary>More detail</summary>
+          <ul>
+            <li>Coordinated parallel retrieval, evidence-grounded response synthesis, and safety screening, combining SQL analysis with semantic retrieval across research documents.</li>
+            <li>Extracted embedded attachments from irregular document formats; combined structural context, parsing rules, and reference data to disambiguate identifiers and link extracted evidence with SQL in Databricks.</li>
+          </ul>
+        </details>
+        <div class="tags"><span class="t">LLM orchestration</span><span class="t">RAG</span><span class="t">text-to-SQL</span><span class="t b">Databricks</span><span class="t b">SQL</span></div>
+      </article>
 
-      <article class="item" id="mafold" data-kind="experience"><div class="crumb">Mafold · July 2026–present</div><h3>Co-founder<span class="role">AI agent product development</span></h3><p>I work on turning user needs into product priorities, technical requirements, and clearer ways for a remote team to collaborate.</p><details><summary>More detail</summary><ul><li>Identified a gap in sharing personal-agent work across teams; proposed agent-to-agent collaboration and broke the concept into technical tasks and privacy requirements with a backend engineer.</li><li>Co-defined a proposed access-control workflow with owner-managed allowlists and owner-consent escalation for sensitive requests.</li><li>Helped establish weekly team syncs and shared issue reporting across a 12-hour time difference, with agent-first troubleshooting and backend escalation.</li><li>Identified 12 product gaps across privacy, orchestration, onboarding, and model routing; organized triage using 3 issue categories and 5 priority levels.</li></ul></details><p class="project-links"><a href="https://mafold.com">Product website ↗</a></p><div class="tags"><span class="t">product</span><span class="t">multi-agent</span><span class="t">requirements</span><span class="t">remote coordination</span></div></article>
+      <article class="item" data-kind="experience">
+        <div class="crumb">Mafold (startup) <span class="dot"></span> Pittsburgh, PA <span class="when">Jul 2026 – present</span></div>
+        <h3>Co-founder <span class="role">AI agent product development</span></h3>
+        <p>Co-founded a platform that lets anyone run AI coding agents as chat bots on their own hardware, with a cross-provider token economy that makes model capacity transferable between users.</p>
+        <details><summary>More detail</summary>
+          <ul>
+            <li>Identified and specified 12 product gaps spanning privacy boundaries, multi-agent orchestration, onboarding, and per-task model routing; designed a 3-category issue taxonomy and 5-level priority scale for triage.</li>
+            <li>Evaluated four data-acquisition paths (first-party API, open-source scrapers, hosted scraping, LLM-native search) on cost, compliance, and maintenance, surfacing a compliant option roughly 85% below the official API cost.</li>
+          </ul>
+        </details>
+        <div class="tags"><span class="t">product</span><span class="t">multi-agent</span><span class="t y">startup</span></div>
+      </article>
 
-      <article class="item" id="kitchin" data-kind="experience"><div class="crumb">Carnegie Mellon University · December 2025–present</div><h3>Kitchin Lab Researcher<span class="role">Viscosity prediction &amp; laboratory automation</span></h3><p>I investigate whether ML models answer the scientific question we actually care about, and connect experimental automation with predictive modeling.</p><details><summary>More detail</summary><ul><li><span id="viscosity"></span><strong>Viscosity benchmark audit:</strong> Audited 39,077 measurements; standardized 1,733 molecular representations into 1,367 unique molecules and found training overlap in 27 of 65 test molecules.</li><li>Designed 2 distinct evaluation settings: unseen molecules, and unseen mixtures of known molecules. On held-out mixtures of known molecules, the structure-based model achieved RMSE 0.060 versus 0.105 for learned embeddings; on truly unseen molecules, the corresponding results were 0.127 versus 0.314.</li><li>Designed and executed 8 MixEmbed robustness tests, identifying 7 defects involving input validation, missing-data handling, and dependency compatibility. Findings communicated to the library maintainer resulted in fixes for all 7 issues.</li><li><strong>Opentrons Flex:</strong> Automated 96 dye mixtures at 4 wavelengths. Trained regression models on 76 wells and evaluated 20 held-out wells (R² 0.9912–0.9989; MAE 0.0106–0.0296 OD).</li></ul></details><p class="project-links"><a href="https://github.com/feixia2754/Opentron-ML-Project-with-June">Opentrons code ↗</a></p><div class="tags"><span class="t">viscosity</span><span class="t">ML evaluation</span><span class="t">regression</span><span class="t">Opentrons Flex</span><span class="t">Python</span></div></article>
+      <article class="item" data-kind="experience">
+        <div class="crumb">Carnegie Mellon University <span class="dot"></span> Kitchin Lab <span class="when">Dec 2025 – present</span></div>
+        <h3>Researcher <span class="role">Self-driving lab &amp; ML for materials</span></h3>
+        <p>Automated 96 RYB dye mixtures on an Opentrons Flex as a proxy for yeast media formulation, then trained forward and inverse regression models on the absorbance data.</p>
+        <details><summary>More detail</summary>
+          <ul>
+            <li>Measured absorbance at 450, 562, 600, and 650 nm to characterize composition–property relationships.</li>
+            <li>Trained on 76 wells, evaluated forward predictions on 20 held-out wells across 4 wavelengths: R² = 0.9912–0.9989, MAE = 0.0106–0.0296 OD.</li>
+            <li>Applied a proposed neural network to predict log viscosity from 39,077 measurements across 1,734 compounds, using learned molecular embeddings to compare linear, pairwise, and attention mixers under a compound-based split.</li>
+          </ul>
+        </details>
+        <div class="tags"><span class="t">regression</span><span class="t">neural networks</span><span class="t b">Opentrons Flex</span><span class="t b">Python</span></div>
+      </article>
 
       <article class="item" data-kind="experience">
         <div class="crumb">Carnegie Mellon University <span class="dot"></span> Robinson Lab <span class="when">Sep 2024 – May 2026</span></div>
@@ -204,7 +238,6 @@ footer{max-width:760px;margin:56px auto 0;text-align:center;color:var(--muted);f
   <section id="projects" data-section>
     <h2>Projects</h2>
     <div class="list">
-<article class="item" id="brandstorm" data-kind="project"><div class="crumb">L’Oréal Brandstorm 2026 · November 2025–February 2026 · Initial-stage participation</div><h3>ÉCHOlogne<span class="role">Market research &amp; product concept development</span></h3><p>Helped shape a Prada-aligned fragrance concept: a refillable dual-chamber system paired with an NFC-connected app for scent discovery, visualizations, and music.</p><details><summary>More detail</summary><ul><li>Conducted market and competitor research to inform brand selection and identify opportunities in personalization, brand identity, and differentiation from lower-cost alternatives.</li><li>Contributed to feature definition, pricing, and a phased rollout roadmap for the proposed product.</li><li>The deck presents a competition concept and proposed business plan. Financial forecasts and sustainability figures are targets or estimates, not achieved operating results.</li></ul></details><p class="project-links"><a href="assets/Loreal_Brandstorm.pdf">Concept deck ↗</a></p><div class="tags"><span class="t">product</span><span class="t">market research</span><span class="t">pricing</span><span class="t">roadmap</span></div></article>
 
       <article class="item" data-kind="project">
         <div class="crumb">Carnegie Mellon <span class="dot"></span> Data Visualization (06-643), graduate course <span class="when">Jan – Feb 2026</span></div>
@@ -230,22 +263,32 @@ footer{max-width:760px;margin:56px auto 0;text-align:center;color:var(--muted);f
           </ul>
         </details>
         <div class="tags"><span class="t">Gemini API</span><span class="t">Google OAuth</span><span class="t b">Python</span><span class="t b">pytest</span><span class="t b">CI</span></div>
-      <p class="project-links"><a href="https://github.com/feixia2754/Canvas_manager">GitHub ↗</a></p></article>
+      </article>
 
       <article class="item" data-kind="project">
         <div class="crumb">Carnegie Mellon <span class="dot"></span> Fluid Mechanics term project <span class="when">Spring 2026</span></div>
         <h3>Inclined Venturi Meter for Fertilizer Irrigation</h3>
-        <p>Used SolidWorks and COMSOL in a four-person class project to design and analyze an irrigation-inspired Venturi meter operating at a 45° incline; compared simulations and theory with physical prototype measurements.</p>
+        <p>Designed and 3D-printed a venturi meter that operates at a 45° incline, modeling how irrigation systems draw fertilizer into flow against gravity. I built all of the 3D models in SolidWorks.</p>
         <details><summary>More detail</summary>
           <ul>
-            <li>Geometry: 160 mm length, 18 mm inlet/outlet, 6 mm throat, 135° elbow, and angled manometer bases so the tubes stay vertical on the incline; the team used a resin-printed prototype with a target budget below $25.</li>
+            <li>Geometry: 160 mm length, 18 mm inlet/outlet, 6 mm throat, 135° elbow, and angled manometer bases so the tubes stay vertical on the incline; printed in Tough Resin 1500 for under $25.</li>
             <li>Compared Bernoulli/continuity theory, COMSOL simulation (~0.6 m/s centerline throat velocity), and bench measurements (1649 Pa inlet → 472 Pa throat); the ~785 Pa hydrostatic term proved small relative to velocity-driven pressure change.</li>
           </ul>
         </details>
         <div class="tags"><span class="t y">SolidWorks</span><span class="t y">COMSOL</span><span class="t">3D printing</span><span class="t">fluid dynamics</span></div>
       </article>
 
-      <article class="item" id="monument-valley" data-kind="project"><div class="crumb">Carnegie Mellon · May 2025</div><h3>Monument Valley Game Replica<span class="role">15-112 term project · Group leader</span></h3><p>Led a student team to develop a playable Python game selected for the Top 20 Projects Gallery out of 150 projects.</p><details><summary>More detail</summary><ul><li>Implemented 3D-to-2D projection, matrix transformations, interactive rotation, and screen transitions.</li></ul></details><p class="project-links"><a href="https://github.com/feixia2754/Replica-of-Monument-Valley-CMU-15112-S25-term-project-">GitHub ↗</a> · <a href="https://drive.google.com/file/d/1ideAAuHOs1DEeXDpG0cGaokMOzICyotT/view">Video demo ↗</a></p><div class="tags"><span class="t">Python</span><span class="t">graphics</span><span class="t">team leadership</span></div></article>
+      <article class="item" data-kind="project">
+        <div class="crumb">Carnegie Mellon <span class="dot"></span> 15-112 term project, group leader <span class="when">May 2025</span></div>
+        <h3>Monument Valley Game Replica</h3>
+        <p>Led a 4-person team recreating Monument Valley in Python with isometric projection and matrix transformations; improved rendering frame rate by 150% and landed in the Top 20 Projects Gallery.</p>
+        <details><summary>More detail</summary>
+          <ul>
+            <li>Coordinated Git workflows across 12 feature branches and 75 pull requests, maintained 100% test coverage, and integrated user-interaction and game-logic modules into the final playable demo.</li>
+          </ul>
+        </details>
+        <div class="tags"><span class="t b">Python</span><span class="t b">Git</span><span class="t">graphics</span><span class="t y">team lead</span></div>
+      </article>
     </div>
   </section>
 
@@ -290,7 +333,7 @@ footer{max-width:760px;margin:56px auto 0;text-align:center;color:var(--muted);f
   <div class="empty" id="empty">Your search — <b id="emptyq"></b> — did not match anything on this page.<br>Try “LLM”, “yeast”, “SolidWorks”, or clear the search.</div>
 </main>
 
-<footer>Faye (Fei) Xia · Carnegie Mellon University · updated November 2026</footer>
+<footer>Faye (Fei) Xia · Carnegie Mellon University · updated September 2026</footer>
 <a href="#" class="toplink" id="toplink" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"/></svg></a>
 
 <script>
